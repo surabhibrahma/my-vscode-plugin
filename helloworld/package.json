@@ -10,14 +10,29 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:helloworld.helloWorld"
+        "onCommand:helloworld.helloWorld",
+		"onCommand:helloworld.datetime"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"keybindings": [
+			{
+				"command": "helloworld.helloWorld",
+				"key": "ctrl+f1"
+			},
+			{
+				"command": "helloworld.datetime",
+				"key": "ctrl+f2"
+			}
+		],
 		"commands": [
 			{
 				"command": "helloworld.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "helloworld.datetime",
+				"title": "Show Date and Time"
 			}
 		]
 	},

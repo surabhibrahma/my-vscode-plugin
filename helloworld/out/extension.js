@@ -18,6 +18,12 @@ function activate(context) {
         // Display a message box to the user
         vscode.window.showInformationMessage('Hello to VS Code!');
     });
+    //making my new addition
+    let datetime = vscode.commands.registerCommand('helloworld.datetime', () => {
+        const date = new Date();
+        vscode.window.showWarningMessage('It is currently: ' + date.getHours() + ':' + date.getMinutes());
+    });
+    context.subscriptions.push(datetime);
     context.subscriptions.push(disposable);
 }
 exports.activate = activate;
